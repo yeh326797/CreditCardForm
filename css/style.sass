@@ -24,46 +24,63 @@ body
         margin-bottom: -120px
         @media (min-width:480px)
             margin-bottom: -130px 
+        transform-style: preserve-3d
+        perspective: 1000px
             
         .card-outer
-            background-color: #999
+            background: url(https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/14.jpeg)
+            background-size: cover
+            background-color: rgba(0, 0, 0, .4)
+            background-blend-mode: multiply
 
             max-width: 310px
             height: 220px
             width: 90%
+            border-radius: 15px
+            // overflow: hidden
             margin-left: auto
             margin-right: auto
+
             position: relative
-            z-index: 2
+            transform-style: preserve-3d
+            transition: 0.6s
+            
             @media (min-width:480px)
                 max-width: 430px
                 height: 270px
                 width: 100%
             
             .type
-                max-width: 100%
-                object-fit: contain
-                max-height: 100%
-                object-position: top right
-
-
-                // height: 45px
-                // // position: relative
-                // // display: flex
-                // // justify-content: flex-end
-                // max-width: 100px
-                // margin-left: auto
+                height: 30px
+                position: relative
+                display: flex
+                justify-content: flex-end
+                margin-left: auto
                 // width: 100%
 
+                @media (min-width:360px)
+                    height: 40px
+                    max-width: 90px
+                @media (min-width:480px)
+                    height: 45px
+                    max-width: 100px
+
+                .typeImg
+                    max-width: 100%
+                    object-fit: contain
+                    max-height: 100%
+                    object-position: top right
+
             .card-side
-                height: 100%
                 border-radius: 15px
+                position: absolute
+                top: 0
+                left: 0
+                width: 100%
+                height: 100%
                 box-shadow: 0 20px 60px 0 rgb(14 42 90 / 55%)
-                // overflow: hidden
-                // transform: perspective(2000px) rotateY(0deg) rotateX(0deg) rotate(0deg)
-                // transform-style: preserve-3d
-                // transition: all 0.8s cubic-bezier(0.71, 0.03, 0.56, 0.85)
-                // backface-visibility: hidden
+                transform-style: preserve-3d
+                backface-visibility: hidden
 
                 .card-wrap
                     font-family: "Source Code Pro", monospace
@@ -85,16 +102,19 @@ body
                             @media (min-width:480px)
                                 width: 60px
                         
-
                     .card-number
                         display: flex
                         font-weight: 500
                         line-height: 1
                         color: #fff
                         cursor: pointer
-                        font-size: 21px
-                        margin-bottom: 15px
+                        font-size: 19px
+                        margin-bottom: 10px
                         padding: 10px 10px
+                        @media (min-width:360px)
+                            font-size: 21px
+                            margin-bottom: 15px
+
                         @media (min-width:480px)
                             font-size: 27px
                             margin-bottom: 35px
@@ -102,10 +122,19 @@ body
 
                         .numberItem
                             display: inline-block
-                            width: 13px
+                            width: 12px
+                            @media (min-width:360px)
+                                width: 13px
+                            @media (min-width:480px)
+                                width: 16px
+
 
                         .blank
-                            width: 16px
+                            width: 8px
+                            @media (min-width:360px)
+                                width: 16px
+                            @media (min-width:480px)
+                                width: 30px
 
                     .content
                         color: #fff
@@ -161,15 +190,15 @@ body
                             .slash
                                 margin: 0 -5px
 
-            .back
-                position: absolute
-                top: 0
-                left: 0
-                width: 100%
-                transform: perspective(2000px) rotateY(0deg) rotateX(0deg) rotate(0deg)
+            .front
                 z-index: 2
+                // transform: perspective(2000px) rotateY(0deg) rotateX(0deg) rotate(0deg)
+                transition: all 0.8s cubic-bezier(0.71, 0.03, 0.56, 0.85)
+
+
+            .back
+                transform: rotateY(180deg)
                 padding: 0
-                height: 100%
 
                 .band
                     background: rgba(0, 0, 19, 0.8)
@@ -214,23 +243,9 @@ body
 
                     .cvv-type
                         opacity: 0.7
-                        height: 30px
-                        position: relative
-                        display: flex
-                        justify-content: flex-end
-                        margin-left: auto
-                        width: 100%
 
-                        @media (min-width:360px)
-                            height: 40px
-                            max-width: 90px
-                        @media (min-width:480px)
-                            height: 45px
-                            max-width: 100px
-
-
-
-
+        .active
+            transform: rotateY(180deg)
 
     .form
         width: 100%
