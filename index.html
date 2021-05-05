@@ -13,6 +13,7 @@
         <div class="card">
           <div class="card-outer">
             <div class="card-side front">
+              <div class="focus"></div>
               <div class="card-wrap">
                 <div class="top">
                   <img
@@ -29,25 +30,25 @@
                   </div>
                 </div>
                 <div class="card-number">
-                  <span class="numberItem">#</span>
-                  <span class="numberItem">#</span>
-                  <span class="numberItem">#</span>
-                  <span class="numberItem">#</span>
-                  <span class="numberItem blank"></span>
-                  <span class="numberItem">#</span>
-                  <span class="numberItem">#</span>
-                  <span class="numberItem">#</span>
-                  <span class="numberItem">#</span>
-                  <span class="numberItem blank"></span>
-                  <span class="numberItem">#</span>
-                  <span class="numberItem">#</span>
-                  <span class="numberItem">#</span>
-                  <span class="numberItem">#</span>
-                  <span class="numberItem blank"></span>
-                  <span class="numberItem">#</span>
-                  <span class="numberItem">#</span>
-                  <span class="numberItem">#</span>
-                  <span class="numberItem">#</span>
+                  <span id="numberItem" class="numberItem">#</span>
+                  <span id="numberItem" class="numberItem">#</span>
+                  <span id="numberItem" class="numberItem">#</span>
+                  <span id="numberItem" class="numberItem">#</span>
+                  <span id="numberItem" class="numberItem blank"></span>
+                  <span id="numberItem" class="numberItem">#</span>
+                  <span id="numberItem" class="numberItem">#</span>
+                  <span id="numberItem" class="numberItem">#</span>
+                  <span id="numberItem" class="numberItem">#</span>
+                  <span id="numberItem" class="numberItem blank"></span>
+                  <span id="numberItem" class="numberItem">#</span>
+                  <span id="numberItem" class="numberItem">#</span>
+                  <span id="numberItem" class="numberItem">#</span>
+                  <span id="numberItem" class="numberItem">#</span>
+                  <span id="numberItem" class="numberItem blank"></span>
+                  <span id="numberItem" class="numberItem">#</span>
+                  <span id="numberItem" class="numberItem">#</span>
+                  <span id="numberItem" class="numberItem">#</span>
+                  <span id="numberItem" class="numberItem">#</span>
                 </div>
                 <div class="content">
                   <label for="" class="card-name">
@@ -57,9 +58,9 @@
                   <div class="expires">
                     <label for="" class="date-title">Expires</label>
                     <div class="date">
-                      <span>MM</span>
+                      <span class='month'>MM</span>
                       <span class="slash">/</span>
-                      <span>YY</span>
+                      <span class='year'>YY</span>
                     </div>
                   </div>
                 </div>
@@ -83,17 +84,17 @@
         </div>
         <div class="form">
           <div class="row">
-            <label for="cardNumber">Card Number</label>
-            <input id="cardNumber" type="text" class="input" />
+            <label for="cardNumber" id='cardNumberId'>Card Number</label>
+            <input id="cardNumber" type="text" class="input" maxlength=16/>
           </div>
           <div class="row">
-            <label for="cardHolder">Card Holders</label>
+            <label for="cardHolder" id="cardHolderId">Card Holders</label>
             <input id="cardHolder" type="text" class="input" />
           </div>
           <div class="row group">
-            <div class="row exp">
+            <div class="row exp" id='cardDate'>
               <label for="">Expiration Date</label>
-              <select name="" id="" class="input mr-15">
+              <select name="" id="month" class="input mr-15">
                 <option value="">Month</option>
                 <option value="01">01</option>
                 <option value="02">02</option>
@@ -108,7 +109,7 @@
                 <option value="11">11</option>
                 <option value="12">12</option>
               </select>
-              <select name="" id="" class="input">
+              <select name="" id="year" class="input">
                 <option value="">Year</option>
                 <option value="2021">2021</option>
                 <option value="2022">2022</option>
@@ -126,7 +127,7 @@
             </div>
             <div class="row">
               <label>CVV</label>
-              <input id="flip" type="text" class="input" />
+              <input id="flip" type="text" class="input" maxlength=4 />
             </div>
           </div>
           <button class="submit">submit</button>
